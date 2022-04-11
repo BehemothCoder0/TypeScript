@@ -12,3 +12,4 @@ var person = {
     [prefix+"Hobby"]: "Skiiling"
 };
 
+console.log(person);
