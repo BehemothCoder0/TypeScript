@@ -1,5 +1,4 @@
-function OptionalParams2(_a) {
-    var initial = _a.initial, _b = _a.final, final = _b === void 0 ? 1 : _b, _c = _a.step, step = _c === void 0 ? 1 : _c;
+function OptionalParams2({ initial, final = 1, step = 1 }) {
     var current = initial;
     while (current > final) {
         console.log(current);

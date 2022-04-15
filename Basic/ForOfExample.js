@@ -1,16 +1,12 @@
-var ForOfExample = /** @class */ (function () {
-    function ForOfExample() {
-    }
-    ForOfExample.prototype.printArray = function (array) {
-        for (var _i = 0, array_1 = array; _i < array_1.length; _i++) {
-            var val = array_1[_i];
+class ForOfExample {
+    printArray(array) {
+        for (var val of array) {
             console.log(val);
         }
-    };
-    return ForOfExample;
-}());
+    }
+}
 function FOEMain() {
-    var obj = new ForOfExample();
+    let obj = new ForOfExample();
     var intArr = [1, 2, 3, 4, 5];
     var strArray = ["apple", "mango", "banana", "peach", "orange"];
     obj.printArray(intArr);

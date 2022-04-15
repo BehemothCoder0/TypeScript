@@ -1,16 +1,15 @@
-var FirstClass = /** @class */ (function () {
+class FirstClass {
     /***
      * The below code declares the class field directly
      * in the constructor
      */
-    function FirstClass(firstClassStrProp) {
+    constructor(firstClassStrProp) {
         this.firstClassStrProp = firstClassStrProp;
         this.firstClassStrProp = firstClassStrProp;
     }
-    FirstClass.prototype.getFirstClassProp = function () {
+    getFirstClassProp() {
         return this.firstClassStrProp;
-    };
-    return FirstClass;
-}());
+    }
+}
 var firstClassObj = new FirstClass("someprop");
 console.log(firstClassObj.getFirstClassProp());

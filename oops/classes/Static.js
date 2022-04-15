@@ -28,26 +28,25 @@ ob2.incrementStaticField();
 // Should be 2
 console.log("The static field value is:" + ob2.getStaticFieldValue());
 // Now in Typescript
-var StaticClass = /** @class */ (function () {
-    function StaticClass(field) {
+class StaticClass {
+    constructor(field) {
         this.field = field;
         this.field = field;
     }
-    StaticClass.prototype.incrementFieldValue = function () {
+    incrementFieldValue() {
         this.field++;
-    };
-    StaticClass.incrementStaticFieldValue = function () {
+    }
+    static incrementStaticFieldValue() {
         StaticClass.staticField++;
-    };
-    StaticClass.prototype.getField = function () {
+    }
+    getField() {
         return this.field;
-    };
-    StaticClass.getStaticField = function () {
+    }
+    static getStaticField() {
         return StaticClass.staticField;
-    };
-    StaticClass.staticField = 0;
-    return StaticClass;
-}());
+    }
+}
+StaticClass.staticField = 0;
 var sob = new StaticClass(12);
 sob.incrementFieldValue();
 sob.incrementFieldValue();

@@ -1,1 +1,1 @@
-var message = "Hello TypeScript";
+let message = "Hello TypeScript";
