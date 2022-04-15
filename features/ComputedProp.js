@@ -11,3 +11,4 @@ var person = (_a = {},
     _a[prefix + "Age"] = 24,
     _a[prefix + "Hobby"] = "Skiiling",
     _a);
+console.log(person);

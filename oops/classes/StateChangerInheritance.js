@@ -14,25 +14,25 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var ConstructionStateChanger = /** @class */ (function () {
-    function ConstructionStateChanger(building) {
-        this.building = building;
-        this.building = building;
+    function ConstructionStateChanger(state) {
+        this.state = state;
     }
     ConstructionStateChanger.prototype.canChangeConstructionState = function (building) {
-        return !!this.building.state;
+        // ! returns false, !! always returns true
+        return !!building.state;
     };
     ConstructionStateChanger.prototype.changeConstructionState = function (building) {
         if (this.canChangeConstructionState(building)) {
-            this.building.state = building.state;
+            building.state = this.state;
         }
-        return this.building;
+        return building;
     };
     return ConstructionStateChanger;
 }());
 var CompleteConstructionStateChanger = /** @class */ (function (_super) {
     __extends(CompleteConstructionStateChanger, _super);
-    function CompleteConstructionStateChanger(building) {
-        return _super.call(this, building) || this;
+    function CompleteConstructionStateChanger() {
+        return _super.call(this, ConstructionState.STARTED) || this;
     }
     CompleteConstructionStateChanger.prototype.canChangeConstructionState = function (building) {
         return _super.prototype.canChangeConstructionState.call(this, building) && building.state != ConstructionState.ENDED;
@@ -40,5 +40,12 @@ var CompleteConstructionStateChanger = /** @class */ (function (_super) {
     return CompleteConstructionStateChanger;
 }(ConstructionStateChanger));
 var building = new constructBuilding();
-building.state = ConstructionState.STARTED;
-var stateChange = new CompleteConstructionStateChanger(building);
+building.state = ConstructionState.IN_PROGRESS;
+console.log("The initial building1 state is:" + ConstructionState[building.state]);
+var stateChanger1 = new CompleteConstructionStateChanger();
+stateChanger1.changeConstructionState(building);
+console.log("The building1 state is:" + ConstructionState[building.state]);
+var building2 = new constructBuilding();
+building2.state = ConstructionState.ENDED;
+var stateChanger2 = new CompleteConstructionStateChanger();
+console.log("The building2 state is:" + ConstructionState[building2.state]);

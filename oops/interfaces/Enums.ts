@@ -7,6 +7,7 @@ interface ConstructBuilding{
 
 enum ConstructionState{
     STARTED=1,
+    IN_PROGRESS,
     ENDED
 }
 
