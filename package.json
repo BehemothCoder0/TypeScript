@@ -1,0 +1,26 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "My Typescript Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BehemothCoder0/TypeScript.git"
+  },
+  "author": "Siddartha C.S",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BehemothCoder0/TypeScript/issues"
+  },
+  "homepage": "https://github.com/BehemothCoder0/TypeScript#readme",
+  "devDependencies": {
+    "tsc": "^2.0.4"
+  },
+  "dependencies": {
+    "typescript": "^4.8.3"
+  }
+}
